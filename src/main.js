@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
-
-ReactDOM.render(<App/>,document.getElementById('app'));
+{
+    ReactDOM.render(<App/>, document.getElementById('app'));
+}
 
 //1.0 表达式
 ReactDOM.render(<h1>1、{1+2}</h1>,document.querySelector('#demo1'));
 
 //1.1
+{
 ReactDOM.render(<div>2、<h1>欢迎</h1><h2>光临</h2><p>这是一个范例2</p></div>,document.querySelector('#demo2'));
+}
 
 //1.2
+{
 ReactDOM.render(<div>3、范例5</div>,document.querySelector('#demo3'));
+}
 
 //1.3 样式
 var style={
@@ -60,28 +65,101 @@ ReactDOM.render(<h1 style={style}>4、样式
 
 //1.8 复合组件
 {
-    //网站标题组件
-    var Name=React.createClass({
-        render:function(){
-            return(<h1 >123</h1>)
+    var WebSite = React.createClass({
+        render: function() {
+            return (
+                <div>
+                    <Name name={this.props.name} key={this.props.name} />
+                    <Link site={this.props.site} key={this.props.site} />
+                </div>
+            );
         }
-    })
-    //网站链接组件
-    var Link=React.createClass({
-        render:function(){
-            return <a href={this.props.site} >{this.props.site}</a>
-        }
-    })
-    //综合组件
-    var Site=React.createClass({
-        render(){
-            return <div><Name name={this.props.name}  /><Link site={this.props.site} /></div>
-        }
-    })
+    });
 
-    ReactDOM.render(<Site name="商城"  site='12332' />,document.querySelector('#demo9'))
+    var Name = React.createClass({
+        render: function() {
+            return (
+                <h1>{this.props.name}</h1>
+            );
+        }
+    });
+
+    var Link = React.createClass({
+        render: function() {
+            return (
+                <a href={this.props.site} key={this.props.site}>
+                    {this.props.site}
+                </a>
+            );
+        }
+    });
+
+    ReactDOM.render(
+        <WebSite name="123"  site=" http://www.baidu.com" />,
+        document.getElementById('demo9')
+    );
 
 }
+
+
+//1.9 react satate
+/*
+* getInitialState:设置初始状态
+* setState({key:value})   引起重新渲染
+* */
+
+{
+
+    var LinkButton=React.createClass({
+        getInitialState(){
+            return{
+                liked:false
+            }
+        },
+        handleClick(ev){
+            this.setState({liked:!this.state.liked});
+        },
+        render(){
+            var text=this.state.liked?'like':'noLike';
+            return(
+                <a onClick={this.handleClick} href="javascript:;">
+                    你<b>{text}</b>我,toggle
+                </a>
+            )
+        }
+    })
+    ReactDOM.render(<LinkButton />,document.querySelector('#demo10'));
+}
+
+{
+//2.0 默认props
+    var People = React.createClass({
+        propTypes:{
+          name:React.PropTypes.string.isRequired
+        },
+        //初始化属性
+        getDefaultProps(){
+            return {
+                name: '默认'
+            }
+        },
+        //初始化数据
+        getInitialState(){
+            return {
+                money: 120
+            }
+        },
+        // ............中间有很多其它方法用来给dom提供事件，修改state, 一定要通过this.setState修改初始数据
+        //用数据渲染页面
+        render(){
+            return <div><h3>2.0、</h3>{this.props.name + ' have ' + this.state.money + '元'}</div>
+        }
+    })
+    ReactDOM.render(<People name="wjl"/>,document.querySelector('#demo11'));
+}
+
+
+
 
 
 
