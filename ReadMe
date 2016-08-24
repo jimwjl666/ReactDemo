@@ -1,7 +1,7 @@
 一、环境安装
 create by wjl in 20160824
 1、
-    npm install bable -g
+    npm install babel -g
     npm install webpack -g
     npm install webpack-dev-server -g
 2、
@@ -9,8 +9,14 @@ create by wjl in 20160824
     npm init
 
 3、
+    npm install react --save-dev
+    npm install react-dom --save-dev
     npm install webpack --save-dev
     npm install webpack-dev-server --save-dev
+    npm install babel-core --save-dev
+    npm install babel-loader --save-dev
+    npm install babel-preset-react --save-dev
+    npm install babel-preset-es2015 --save-dev
 
 4、
     webpack.config.js
@@ -24,6 +30,5 @@ create by wjl in 20160824
 
 装完这堆东西记得重启动
 
-二、
 
 
