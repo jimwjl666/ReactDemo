@@ -1,0 +1,29 @@
+一、环境安装
+create by wjl in 20160824
+1、
+    npm install bable -g
+    npm install webpack -g
+    npm install webpack-dev-server -g
+2、
+    创建文件目录 your project name
+    npm init
+
+3、
+    npm install webpack --save-dev
+    npm install webpack-dev-server --save-dev
+
+4、
+    webpack.config.js
+
+5、
+    打开 package.json
+    替换 test" "echo \"Error: no test specified\" && exit 1"
+    为   "start": "webpack-dev-server --hot"
+
+6、 运行npm start
+
+装完这堆东西记得重启动
+
+二、
+
+
