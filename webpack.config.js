@@ -1,7 +1,11 @@
 var path = require("path");
 var config = {
     //打包入口文件
-    entry: './src/main.js',
+    entry: {
+        basic_demo:'./src/basic_demo.js',
+        ajax_demo:'./src/ajax_demo.js',
+        refs_demo:'./src/refs_demo.js'
+    },
     /*
      * path:输出到根目录
      * filename：输出的文件名
