@@ -4,7 +4,8 @@ var config = {
     entry: {
         basic_demo:'./src/basic_demo.js',
         ajax_demo:'./src/ajax_demo.js',
-        refs_demo:'./src/refs_demo.js'
+        refs_demo:'./src/refs_demo.js',
+        reactRouter_demo:'./src/react-router_demo.js'
     },
     /*
      * path:输出到根目录
