@@ -22,8 +22,7 @@ var config = {
      * */
     devServer: {
         inline: true,
-        port: 7777
-    },
+        port: 7777    },
     module: {
         loaders: [ {
             test: /\.js|jsx$/,

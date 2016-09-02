@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, Link, browserHistory} from 'react-router';
 import LoginHandler from './components/login.js';
 
 const ACTIVE = { color: 'red' }
-class App extends React.Component {
+/*class App extends React.Component {
     render() {
         return (
             <div>
@@ -15,12 +15,25 @@ class App extends React.Component {
                     <li><Link to="/about" activeStyle={ACTIVE}>关于我们</Link></li>
                     <li><Link to="/message/3" activeStyle={ACTIVE}>传参</Link></li>
                 </ul>
-                {/*类似于一个展位符*/}
+                {/!*类似于一个展位符*!/}
                 {this.props.children}
             </div>
         )
     }
-}
+}*/
+const App = ({ children }) => (
+    <div>
+        <h1>APP!</h1>
+        <ul>
+            <li><Link to="/" activeStyle={ACTIVE}>首页</Link></li>
+            <li><Link to="/users" activeStyle={ACTIVE}>用户页</Link></li>
+            <li><Link to="/about" activeStyle={ACTIVE}>关于我们</Link></li>
+            <li><Link to="/message/3" activeStyle={ACTIVE}>传参</Link></li>
+        </ul>
+
+        {children}
+    </div>
+)
 //首页模板及操作
 class Index extends React.Component {
     render() {
@@ -67,6 +80,7 @@ render((
         </Route>
     </Router>
 ), document.getElementById('app'))
+
 
 
 
