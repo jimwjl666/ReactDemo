@@ -66,9 +66,6 @@ var config = {
 		})
 
     ],
-    devServer:{
-    	contentBase:'./dist/view'
-    },
     resolve:{
         alias:{
            
