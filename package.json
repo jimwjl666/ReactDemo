@@ -4,13 +4,14 @@
   "description": "一、环境安装\r create by wjl in 20160824\r 1、\r     npm install bable -g\r     npm install webpack -g\r     npm install webpack-dev-server -g\r 2、\r     创建文件目录 your project name\r     npm init",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack-dev-server --hot"
+    "start": "webpack-dev-server --hot",
+    "build": "webpack --config  webpack.build.config.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gitwujiaolong/ReactDemo.git"
   },
-  "author": "",
+  "author": "wjl",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gitwujiaolong/ReactDemo/issues"
