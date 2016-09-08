@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom'
 import { Router, Route, IndexRoute, Link, browserHistory} from 'react-router';
-import LoginHandler from './components/login.js';
+import LoginHandler from '../components/login.js';
 
 const ACTIVE = { color: 'red' }
 /*class App extends React.Component {
